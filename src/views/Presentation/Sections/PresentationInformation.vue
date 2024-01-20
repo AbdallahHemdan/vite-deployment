@@ -11,7 +11,7 @@ import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.v
         <div class="col-lg-4 ms-auto me-auto p-lg-4 mt-lg-0 mt-4 mb-4">
           <RotatingCard>
             <RotatingCardFront
-              image="https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/417134218_714512540773262_811397112796543676_n.jpg?stp=c51.0.206.206a_dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=3d9721&_nc_eui2=AeH23u8pz42ssJnOsmd6C66HCyO1XlGuyPgLI7VeUa7I-MUs71fq3rrk7L_9bWcPmlncmdNoid1Bijv7e3BmkKQk&_nc_ohc=3OGQACttPxwAX8uGoHc&_nc_oc=AQl7ta3BtUePFl2tOLm__SfHUh6WFGb_vTScKIRk7sCSyccqDSq9kWnejxH_gvLs6ZQ&_nc_ht=scontent.fcai20-4.fna&oh=00_AfCuKnYZRWOIcB0EwLmxbHvgLElBnUOKO-LO03Anzi-ClA&oe=65ABFCCE"
+              image="https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/417134218_714512540773262_811397112796543676_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeH23u8pz42ssJnOsmd6C66HCyO1XlGuyPgLI7VeUa7I-MUs71fq3rrk7L_9bWcPmlncmdNoid1Bijv7e3BmkKQk&_nc_ohc=isNJf3m_W_wAX-fG6Jg&_nc_oc=AQnvHoTOi_mJqn78JN8heHNBe2yjM4Ov34Wyzk_aNLFlle-GdRzp1MZP9CFSSi1wrdU&_nc_ht=scontent.fcai20-4.fna&oh=00_AfA-mlE6uMsIzvZ2Tc5R4s1fiYJxE-FJPFnqbPMRrTOSng&oe=65B1EB8E"
               icon="touch_app"
               title="Coaching a Rower's Mind"
               description="The Dutch National Rowing Team Men’s Sculling Coach, Francesco Fossi, has some firm ideas on coaching. The recent recipient of the 2023 World Rowing."

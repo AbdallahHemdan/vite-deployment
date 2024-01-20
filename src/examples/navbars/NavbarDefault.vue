@@ -96,7 +96,7 @@ watch(
     :class="{
       'z-index-3 w-100 shadow-none navbar-transparent position-absolute':
         props.transparent,
-      'blur z-index-3 py-3 shadow py-2 start-0 end-0 position-absolute':
+      'blur z-index-3 shadow py-2 start-0 end-0 position-absolute':
         props.sticky,
       'navbar-light bg-white py-3': props.light,
       ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
@@ -110,7 +110,7 @@ watch(
       "
     >
       <RouterLink
-        class="navbar-brand d-none d-md-block"
+        class="navbar-brand d-none d-md-flex"
         :class="[
           (props.transparent && textDark.value) || !props.transparent
             ? 'text-dark font-weight-bolder ms-sm-3'
@@ -122,12 +122,15 @@ watch(
         data-placement="bottom"
       >
         <img
-          class="img-logo w-6 me-2"
+          class="img-logo w-md-15 me-2"
           alt="logoCt"
           loading="lazy"
           :src="logoImage"
         />
-        <span>EGYPT ROWING</span>
+        <div class="d-flex flex-column justify-content-center">
+          <span>EGYPT ROWING</span>
+          <span>الأتحاد المصري للتجديف</span>
+        </div>
       </RouterLink>
 
       <RouterLink
@@ -168,7 +171,7 @@ watch(
         class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0"
         id="navigation"
       >
-        <ul class="navbar-nav navbar-nav-hover ms-auto">
+        <ul class="navbar-nav navbar-nav-hover">
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a
               role="button"
@@ -209,19 +212,19 @@ watch(
                         Rowing
                       </div>
                       <RouterLink
-                        :to="{ name: 'about' }"
+                        :to="{ name: 'author' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>Indoor Rowing</span>
                       </RouterLink>
                       <RouterLink
-                        :to="{ name: 'contactus' }"
+                        :to="{ name: 'presentation' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>Coastal Rowing</span>
                       </RouterLink>
                       <RouterLink
-                        :to="{ name: 'author' }"
+                        :to="{ name: 'presentation' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>Masters Rowing</span>
@@ -232,13 +235,13 @@ watch(
                         Events and Results
                       </div>
                       <RouterLink
-                        :to="{ name: 'signin-basic' }"
+                        :to="{ name: 'presentation' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>Calender</span>
                       </RouterLink>
                       <RouterLink
-                        :to="{ name: 'signin-basic' }"
+                        :to="{ name: 'presentation' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>Events List</span>
@@ -254,19 +257,19 @@ watch(
                   Rowing
                 </div>
                 <RouterLink
-                  :to="{ name: 'about' }"
+                  :to="{ name: 'author' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>Indoor Rowing</span>
                 </RouterLink>
                 <RouterLink
-                  :to="{ name: 'contactus' }"
+                  :to="{ name: 'presentation' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>Coastal Rowing</span>
                 </RouterLink>
                 <RouterLink
-                  :to="{ name: 'author' }"
+                  :to="{ name: 'presentation' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>Masters Rowing</span>
@@ -277,13 +280,13 @@ watch(
                   Events and Results
                 </div>
                 <RouterLink
-                  :to="{ name: 'signin-basic' }"
+                  :to="{ name: 'presentation' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>Calender</span>
                 </RouterLink>
                 <RouterLink
-                  :to="{ name: 'signin-basic' }"
+                  :to="{ name: 'presentation' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>Events List</span>
@@ -353,25 +356,25 @@ watch(
                     <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'page-headers' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Governance
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'page-features' }"
+                        :to="{ name: 'presentation' }"
                       >
                         President and Honorary President
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'page-features' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Council
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'page-features' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Commissions
                       </RouterLink>
@@ -407,31 +410,31 @@ watch(
                     <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'navigation-navbars' }"
+                        :to="{ name: 'presentation' }"
                       >
                         World Rowing Awards
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'navigation-navtabs' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Thomas Keller Medal
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'navigation-pagination' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Filippi Spirit Award
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'navigation-pagination' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Distinguished Service to International Rowing
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
-                        :to="{ name: 'navigation-pagination' }"
+                        :to="{ name: 'presentation' }"
                       >
                         Sustainability Award
                       </RouterLink>
@@ -456,25 +459,25 @@ watch(
                   </div>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'page-headers' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Governance
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'page-features' }"
+                    :to="{ name: 'presentation' }"
                   >
                     President and Honorary President
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'page-features' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Council
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'page-features' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Commissions
                   </RouterLink>
@@ -493,31 +496,31 @@ watch(
                   </div>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'navigation-navbars' }"
+                    :to="{ name: 'presentation' }"
                   >
                     World Rowing Awards
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'navigation-navtabs' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Thomas Keller Medal
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'navigation-pagination' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Filippi Spirit Award
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'navigation-pagination' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Distinguished Service to International Rowing
                   </RouterLink>
                   <RouterLink
                     class="dropdown-item ps-3 border-radius-md mb-1"
-                    :to="{ name: 'navigation-pagination' }"
+                    :to="{ name: 'presentation' }"
                   >
                     Sustainability Award
                   </RouterLink>
@@ -560,7 +563,7 @@ watch(
                   <li class="nav-item list-group-item border-0 p-0">
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/overview/material-kit/"
+                      href="#"
                     >
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
@@ -575,7 +578,7 @@ watch(
                   <li class="nav-item list-group-item border-0 p-0">
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/colors/material-kit/"
+                      href="#"
                     >
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
@@ -590,7 +593,7 @@ watch(
                   <li class="nav-item list-group-item border-0 p-0">
                     <a
                       class="dropdown-item py-2 ps-3 border-radius-md"
-                      href=" https://www.creative-tim.com/learning-lab/vue/alerts/material-kit/"
+                      href="#"
                     >
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
@@ -607,10 +610,7 @@ watch(
               </div>
               <div class="row d-lg-none">
                 <div class="col-md-12 g-0">
-                  <a
-                    class="dropdown-item py-2 ps-3 border-radius-md"
-                    href="./pages/about-us.html"
-                  >
+                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="#">
                     <h6
                       class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                     >
@@ -620,10 +620,7 @@ watch(
                       >All world news from World Rowing</span
                     >
                   </a>
-                  <a
-                    class="dropdown-item py-2 ps-3 border-radius-md"
-                    href="./pages/about-us.html"
-                  >
+                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="#">
                     <h6
                       class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                     >
@@ -633,10 +630,7 @@ watch(
                       >All local news about events, athletes, and more</span
                     >
                   </a>
-                  <a
-                    class="dropdown-item py-2 ps-3 border-radius-md"
-                    href="./pages/about-us.html"
-                  >
+                  <a class="dropdown-item py-2 ps-3 border-radius-md" href="#">
                     <h6
                       class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                     >

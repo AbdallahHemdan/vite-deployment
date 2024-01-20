@@ -42,7 +42,7 @@ const router = createRouter({
       component: ContactView,
     },
     {
-      path: "/pages/landing-pages/author",
+      path: "/pages/landing-pages/event",
       name: "author",
       component: AuthorView,
     },

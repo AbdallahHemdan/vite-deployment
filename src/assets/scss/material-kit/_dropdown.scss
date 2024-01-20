@@ -149,7 +149,8 @@
     }
     .dropdown.nav-item .dropdown-menu {
       background-color: transparent;
-      overflow: scroll;
+      overflow-y: auto;
+      overflow-x: hidden;
       position: relative;
     }
   }
