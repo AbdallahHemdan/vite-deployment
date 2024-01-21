@@ -3,6 +3,10 @@ import RotatingCard from "../../../examples/cards/rotatingCards/RotatingCard.vue
 import RotatingCardFront from "../../../examples/cards/rotatingCards/RotatingCardFront.vue";
 import RotatingCardBack from "../../../examples/cards/rotatingCards/RotatingCardBack.vue";
 import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.vue";
+
+import coachRowing1 from "@/assets/img/examples/coaching-rower-1.jpg";
+import coachRowing2 from "@/assets/img/examples/coaching-rower-2.jpg";
+
 </script>
 <template>
   <section class="my-5 py-5">
@@ -11,14 +15,14 @@ import DefaultInfoCard from "../../../examples/cards/infoCards/DefaultInfoCard.v
         <div class="col-lg-4 ms-auto me-auto p-lg-4 mt-lg-0 mt-4 mb-4">
           <RotatingCard>
             <RotatingCardFront
-              image="https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/417134218_714512540773262_811397112796543676_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeH23u8pz42ssJnOsmd6C66HCyO1XlGuyPgLI7VeUa7I-MUs71fq3rrk7L_9bWcPmlncmdNoid1Bijv7e3BmkKQk&_nc_ohc=isNJf3m_W_wAX-fG6Jg&_nc_oc=AQnvHoTOi_mJqn78JN8heHNBe2yjM4Ov34Wyzk_aNLFlle-GdRzp1MZP9CFSSi1wrdU&_nc_ht=scontent.fcai20-4.fna&oh=00_AfA-mlE6uMsIzvZ2Tc5R4s1fiYJxE-FJPFnqbPMRrTOSng&oe=65B1EB8E"
+              :image="coachRowing1"
               icon="touch_app"
               title="Coaching a Rower's Mind"
               description="The Dutch National Rowing Team Men’s Sculling Coach, Francesco Fossi, has some firm ideas on coaching. The recent recipient of the 2023 World Rowing."
             />
 
             <RotatingCardBack
-              image="https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/413006407_706461761578340_5499230487392229750_n.jpg?stp=c0.23.206.206a_dst-jpg_p206x206&_nc_cat=105&ccb=1-7&_nc_sid=3d9721&_nc_eui2=AeF9topgWsnRZ5xcVIWQlhb5yS8u1swpDyPJLy7WzCkPIziMA7TkEIqKzFENONYnT2KkGPSKccmer--yFUwr10Xk&_nc_ohc=39uzBoTkieAAX-oACpJ&_nc_ht=scontent.fcai20-4.fna&oh=00_AfDl__d9XueYVseJIIeBlD72oqaBi0MSGR2h5h2jUoXShA&oe=65ACC32E"
+              :image="coachRowing2"
               title="Discover More"
               description="Breaking the world record in one of the most arduous distances: the marathon."
               :action="[

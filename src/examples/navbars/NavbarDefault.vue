@@ -134,7 +134,7 @@ watch(
       </RouterLink>
 
       <RouterLink
-        class="navbar-brand d-block d-md-none"
+        class="navbar-brand d-flex d-md-none"
         :class="
           props.transparent || props.dark
             ? 'text-white'
@@ -145,7 +145,16 @@ watch(
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        EGYPT ROWING
+        <img
+          class="img-logo height-100 me-2"
+          alt="logoCt"
+          loading="lazy"
+          :src="logoImage"
+        />
+        <div class="d-flex flex-column justify-content-center">
+          <span>EGYPT ROWING</span>
+          <span>الأتحاد المصري للتجديف</span>
+        </div>
       </RouterLink>
       <!-- <a
         href="#"
