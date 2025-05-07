@@ -1520,6 +1520,7 @@
    */
 
 
+  // Main SDK code wrapped in an IIFE
   (function(window) {
 
     // SDK Constructor
@@ -2047,7 +2048,7 @@
       _setupBufferManagement: function() {
         this.bufferManager.setupBufferManagement();
       },
-      
+
       _shouldCollectResource: function(resource) {
         return this.bufferManager.shouldCollectResource(resource);
       },
@@ -2206,11 +2207,9 @@
       }
     };
 
-    // Export to window
-    window.Optima = Optima;
-    
-    // Command queue processor function
-    function optimaHandler() {
+    // Ensure all external APIs are explicitly assigned to the window object for minification safety
+    var OptimaSdk = function() {
+      // Command queue processor function
       var args = Array.prototype.slice.call(arguments);
       var command = args[0];
       
@@ -2221,13 +2220,13 @@
         var apiKey = args[1] || null;
         var config = args[2] || {};
         config.apiKey = apiKey;
-        console.log('[Optima Debug] Initializing SDK with apiKey:', apiKey?.substring(0, 4) + '***', 'and config:', config);
-        window.optimaInstance = new Optima(config);
-        return window.optimaInstance;
+        console.log('[Optima Debug] Initializing SDK with apiKey:', apiKey ? apiKey.substring(0, 4) + '***' : 'null', 'and config:', config);
+        window['optimaInstance'] = new Optima(config);
+        return window['optimaInstance'];
       }
       
       // Other commands require an instance
-      if (!window.optimaInstance) {
+      if (!window['optimaInstance']) {
         console.warn('[Optima Debug] Command executed before initialization:', command);
         return false;
       }
@@ -2236,42 +2235,49 @@
       switch (command) {
         case 'event':
           console.log('[Optima Debug] Sending event:', args[1], args[2]);
-          return window.optimaInstance.sendEvent(args[1], args[2], args[3]);
+          return window['optimaInstance'].sendEvent(args[1], args[2], args[3]);
         
         case 'captureResources':
           console.log('[Optima Debug] Capturing resources manually');
-          return window.optimaInstance.captureResourceData('manual');
+          return window['optimaInstance'].captureResourceData('manual');
         
         case 'flushBuffers':
           console.log('[Optima Debug] Flushing buffers, useBeacon:', args[1] === true);
-          return window.optimaInstance.sendCollectedData(args[1] === true);
+          return window['optimaInstance'].sendCollectedData(args[1] === true);
         
         case 'debug':
           console.log('[Optima Debug] Debug info requested');
-          return window.optimaInstance.debug();
+          return window['optimaInstance'].debug();
           
         default:
           console.warn('[Optima Debug] Unknown command:', command);
           return false;
       }
-    }
+    };
     
-    // Process any queued commands from the loader
-    if (typeof window.optima === 'function') {
+    // Make sure exports are explicitly assigned to window with string keys 
+    window['Optima'] = Optima;
+    
+    // Process any queued commands from the loader  
+    var originalOptima = null;
+    if (typeof window['optima'] === 'function') {
       console.log('[Optima Debug] Processing queued commands');
-      var originalOptima = window.optima;
-      window.optima = optimaHandler;
+      originalOptima = window['optima'];
       
       if (originalOptima.q && originalOptima.q.length) {
         console.log('[Optima Debug] Found', originalOptima.q.length, 'queued commands');
+        window['optima'] = OptimaSdk;
+        
         for (var i = 0; i < originalOptima.q.length; i++) {
           console.log('[Optima Debug] Processing queued command:', originalOptima.q[i][0]);
-          optimaHandler.apply(window, originalOptima.q[i]);
+          OptimaSdk.apply(window, originalOptima.q[i]);
         }
+      } else {
+        window['optima'] = OptimaSdk;
       }
     } else {
       console.log('[Optima Debug] No queued commands found, setting up optima handler');
-      window.optima = optimaHandler;
+      window['optima'] = OptimaSdk;
     }
     
   })(window);
